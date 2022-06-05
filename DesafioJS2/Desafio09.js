@@ -16,11 +16,9 @@ function DAC(sequencia){
 }
 
 function linhaDigitavel(codigo){
-    let digitavel1 =
-    let digitavel2 =
-    let digitavel3 = 
-    let digitavel4 =
-
+    let separador = codigo.split('');
+    let digitavel = {part1: separador.slice(0, 11), part2: separador.slice(11, 22), part3: separador.slice(22, 33), part4: separador.slice(33, 44)};
+    let dacs = {dac1: DAC(digitavel.part1), dac2: DAC(digitavel.part2), dac3: DAC(digitavel.part3), dac4: DAC(digitavel.part4)};
+    let resultado = digitavel.part1.join('') + '-' + dacs.dac1 + ' ' + digitavel.part2.join('') + '-' + dacs.dac2 + ' ' + digitavel.part3.join('') + '-' + dacs.dac3 + ' ' + digitavel.part4.join('') + '-' + dacs.dac4;
+    return resultado;
 }
-
-console.log(linhaDigitavel('431242341111234123567612348765412'))
